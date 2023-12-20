@@ -71,7 +71,7 @@ function App() {
   const maxPoints = questions.reduce((prev,cur)=> prev + cur.points,0)
 
   useEffect(function(){
-    fetch("http://localhost:8000/questions")
+    fetch( `https://json-server-vercel-nine-chi.vercel.app/questions`)
     .then((res)=>res.json())
     .then((data)=> dispatch({type: 'dataRecived', payload: data}))
     .catch((err)=> dispatch({type: 'dataFailed'}))  
